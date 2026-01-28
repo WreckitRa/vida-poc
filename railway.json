@@ -5,7 +5,7 @@
     "buildCommand": "npm run build"
   },
   "deploy": {
-    "startCommand": "next start -p $PORT",
+    "startCommand": "next start -H 0.0.0.0 -p $PORT",
     "healthcheckPath": "/api/health",
     "healthcheckTimeout": 30
   }
