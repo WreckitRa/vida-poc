@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --whatsapp-green: #25D366;
+  --whatsapp-green-dark: #128C7E;
+  --whatsapp-green-light: #DCF8C6;
+  --whatsapp-bg: #E5DDD5;
+  --whatsapp-header: #075E54;
+  --whatsapp-sent: #DCF8C6;
+  --whatsapp-received: #FFFFFF;
+}
+
+body {
+  color: #111b21;
+  background: var(--whatsapp-bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+/* WhatsApp background pattern */
+.whatsapp-bg {
+  background-color: var(--whatsapp-bg);
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.02) 10px,
+      rgba(0, 0, 0, 0.02) 20px
+    );
+}
+
+@layer utilities {
+  .whatsapp-sent {
+    background-color: var(--whatsapp-sent);
+    color: #111b21;
+  }
+  
+  .whatsapp-received {
+    background-color: var(--whatsapp-received);
+    color: #111b21;
+  }
+  
+  .whatsapp-header {
+    background-color: var(--whatsapp-header);
+    color: white;
+  }
+  
+  .whatsapp-green {
+    background-color: var(--whatsapp-green);
+    color: white;
+  }
+}
