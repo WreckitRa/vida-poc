@@ -203,7 +203,6 @@ export function parseUserMessage(
   const vibeMap: Record<string, "romantic" | "lively" | "quiet" | "outdoor" | "family" | "business"> = {
     romantic: "romantic",
     intimate: "romantic",
-    romantic: "romantic",
     lively: "lively",
     casual: "lively",
     fun: "lively",

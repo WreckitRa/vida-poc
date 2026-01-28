@@ -316,7 +316,7 @@ export async function processMessageNew(userText: string): Promise<{
 
     // If pendingSlot exists, validate with Prompt B first
     let validatedValue: string | number | null = null;
-    if (pendingSlot && pendingSlot !== "notes") {
+    if (pendingSlot) {
       const supportedChoices =
         pendingSlot === "area" ? supportedAreas : pendingSlot === "cuisine" ? supportedCuisines : undefined;
       const validation = await validateSlotClient(pendingSlot, userText, supportedChoices);

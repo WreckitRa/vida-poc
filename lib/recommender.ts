@@ -80,6 +80,7 @@ function scoreRestaurant(restaurant: Restaurant, slots: Slots, profile: Profile)
 
   // Vibe match (+2 per match)
   if (slots.vibe) {
+    const requestedVibe = slots.vibe;
     const vibeMatch = restaurant.vibe.some((v) => {
       const vibeMap: Record<string, string[]> = {
         romantic: ["romantic", "intimate", "elegant"],
@@ -89,7 +90,7 @@ function scoreRestaurant(restaurant: Restaurant, slots: Slots, profile: Profile)
         family: ["family-friendly", "family"],
         business: ["business", "professional", "upscale"],
       };
-      const matches = vibeMap[slots.vibe] || [];
+      const matches = vibeMap[requestedVibe] || [];
       return matches.some((m) => v.toLowerCase().includes(m.toLowerCase()));
     });
     if (vibeMatch) {
@@ -179,6 +180,7 @@ function generateReasons(restaurant: Restaurant, slots: Slots, profile: Profile)
 
   // Vibe match
   if (slots.vibe) {
+    const requestedVibe = slots.vibe;
     const vibeMatch = restaurant.vibe.some((v) => {
       const vibeMap: Record<string, string[]> = {
         romantic: ["romantic", "intimate", "elegant"],
@@ -188,7 +190,7 @@ function generateReasons(restaurant: Restaurant, slots: Slots, profile: Profile)
         family: ["family-friendly", "family"],
         business: ["business", "professional", "upscale"],
       };
-      const matches = vibeMap[slots.vibe] || [];
+      const matches = vibeMap[requestedVibe] || [];
       return matches.some((m) => v.toLowerCase().includes(m.toLowerCase()));
     });
     if (vibeMatch) {

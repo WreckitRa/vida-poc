@@ -97,3 +97,27 @@ export interface RestaurantRecommendation {
   restaurant: Restaurant;
   reasons: string[];
 }
+
+// Session state for conversation memory
+export interface Session {
+  messages: Message[];
+  profile: {
+    preferences: {
+      cuisines?: string[];
+      budget?: string;
+      vibe?: string[];
+      dietary?: string[];
+      location?: string;
+      partySize?: number;
+      time?: string;
+    };
+    dislikes?: string[];
+    lastBookedRestaurantId?: string;
+  };
+  state: {
+    turns: number;
+    confidence: number;
+    pendingBooking: BookingDraft | null;
+    lastAction?: string;
+  };
+}
